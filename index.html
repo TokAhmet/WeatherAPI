@@ -4,14 +4,30 @@
 	<meta charset="UTF-8">
 	<title>WeatherAPI</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="¨css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="script/script.js" defer></script>
 </head>
 <body>
-	<div id="result">
-		<ul id="myUl">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="weather">
+					<div class="current">
+						<div class="info">
 
-		</ul>
-	</div>	
+							<div id="city" class="city"></div>
+							<div id="date" class="date"></div>
+							<div id="temp" class="temp">&deg;</div>
+							<div id="icon" class="icon"></div>
+						</div>
+					</div>
+					<div id="future" class="future">
+
+					</div>                                        
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
