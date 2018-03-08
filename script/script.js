@@ -48,26 +48,27 @@ for(var i = 7; i < myForecastResponse.list.length; i+=8){
 	let dateh5 = document.createElement("h5");
 	let forecastWeatherDate = document.createTextNode(new Date(myForecastResponse.list[i].dt_txt).toDateString());
 	dateh5.appendChild(forecastWeatherDate);
+	forecastDiv.appendChild(dateh5);
 
 	let tempMinh6= document.createElement("h6");
-	let forecastWeatherMinTemp = document.createTextNode("Min-Temp: " + myForecastResponse.list[i + 1].main.temp_min);
+	let forecastWeatherMinTemp = document.createTextNode("Min-Temp: " + myForecastResponse.list[i -1].main.temp_min);
 	tempMinh6.appendChild(forecastWeatherMinTemp);
+	forecastDiv.appendChild(tempMinh6);
 
 	let tempMaxh6 = document.createElement("h6");
 	let forecastWeatherMaxTemp = document.createTextNode("Max-Temp: " + myForecastResponse.list[i].main.temp_max);
 	tempMaxh6.appendChild(forecastWeatherMaxTemp);
+	forecastDiv.appendChild(tempMaxh6);
 
 	let newIcon = document.createElement("img");
 	newIcon.setAttribute("src", iconResponse + myForecastResponse.list[i].weather[0].icon + ".png");
-	
-	forecastDiv.appendChild(dateh5);
-	forecastDiv.appendChild(tempMinh6);
-	forecastDiv.appendChild(tempMaxh6);
 	forecastDiv.appendChild(newIcon);
+	
 	futureDays.appendChild(forecastDiv);
 }
 
 }
+
 async function fetchData(url){ // jshint ignore:line
 
 	let promise = await fetch(url);
